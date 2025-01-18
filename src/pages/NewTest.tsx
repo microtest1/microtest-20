@@ -60,16 +60,19 @@ const NewTest = () => {
   return (
     <DashboardLayout>
       <div className="space-y-8 animate-fade-in">
-        <h1 className="text-3xl font-bold text-gray-900">New Test</h1>
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">New Test</h1>
+          <p className="text-gray-500 mt-1">Submit a new test for analysis</p>
+        </div>
 
-        <Card className="p-6">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <Card className="p-8 border-primary-100">
+          <form onSubmit={handleSubmit} className="space-y-8">
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-900">
                 Test Type
               </label>
               <Select onValueChange={setTestType}>
-                <SelectTrigger>
+                <SelectTrigger className="border-primary-100 focus:ring-primary-200">
                   <SelectValue placeholder="Select test type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -80,7 +83,7 @@ const NewTest = () => {
             </div>
 
             <div
-              className="border-2 border-dashed rounded-lg p-8 text-center cursor-pointer hover:border-primary transition-colors"
+              className="border-2 border-dashed rounded-lg p-8 text-center cursor-pointer hover:border-primary transition-colors bg-primary-50/50"
               onDragOver={(e) => e.preventDefault()}
               onDrop={handleFileDrop}
               onClick={() => {
@@ -98,7 +101,7 @@ const NewTest = () => {
                 <img
                   src={preview}
                   alt="Preview"
-                  className="max-h-64 mx-auto rounded-lg"
+                  className="max-h-64 mx-auto rounded-lg shadow-lg"
                 />
               ) : (
                 <div className="text-gray-500">
@@ -114,7 +117,7 @@ const NewTest = () => {
 
             <Button
               type="submit"
-              className="w-full bg-primary hover:bg-primary-600"
+              className="w-full bg-primary hover:bg-primary-600 shadow-lg hover:shadow-xl transition-all duration-200"
               disabled={!testType || !file}
             >
               Submit Test

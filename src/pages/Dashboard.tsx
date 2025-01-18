@@ -18,10 +18,13 @@ const Dashboard = () => {
     <DashboardLayout>
       <div className="space-y-8 animate-fade-in">
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">Welcome back!</h1>
+            <p className="text-gray-500 mt-1">Here's an overview of your tests</p>
+          </div>
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary-600"
+            className="bg-primary hover:bg-primary-600 shadow-lg hover:shadow-xl transition-all duration-200"
             onClick={() => navigate("/new-test")}
           >
             New Test
@@ -30,7 +33,10 @@ const Dashboard = () => {
 
         <div className="grid gap-6 md:grid-cols-3">
           {stats.map((stat) => (
-            <Card key={stat.label} className="p-6">
+            <Card 
+              key={stat.label} 
+              className="p-6 hover:shadow-lg transition-all duration-200 border-primary-100 hover:border-primary-200"
+            >
               <div className="flex items-center space-x-4">
                 <div className="rounded-full bg-primary-50 p-3">
                   <stat.icon className="h-6 w-6 text-primary" />
@@ -48,7 +54,7 @@ const Dashboard = () => {
           ))}
         </div>
 
-        <Card className="p-6">
+        <Card className="p-6 border-primary-100">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">
             Recent Tests
           </h2>
