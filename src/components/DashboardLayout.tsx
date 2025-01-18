@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
-import { FileUpload, BarChart2, Settings, LogOut } from "lucide-react";
+import { FileUp, BarChart2, Settings, LogOut } from "lucide-react";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -34,7 +34,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                 className="w-full justify-start"
                 onClick={() => navigate("/new-test")}
               >
-                <FileUpload className="mr-2 h-5 w-5" />
+                <FileUp className="mr-2 h-5 w-5" />
                 New Test
               </Button>
               <Button
